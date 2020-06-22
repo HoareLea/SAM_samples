@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B47BAD06-8523-455E-ACF8-4879D0286EC1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAM.Analytical</RootNamespace>
+    <AssemblyName>SAM.Analytical</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>false</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\build\SAM.Analytical.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\build\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="clipper_library, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\com.angusj.Clipper.6.4.2\lib\net40\clipper_library.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite, Version=2.0.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NetTopologySuite.2.0.0\lib\netstandard2.0\NetTopologySuite.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\AdjacencyCluster.cs" />
+    <Compile Include="Classes\AnalyticalModel.cs" />
+    <Compile Include="Classes\ApertureConstruction.cs" />
+    <Compile Include="Classes\BoundaryEdge3DLoop.cs" />
+    <Compile Include="Classes\BoundaryEdge2DLoop.cs" />
+    <Compile Include="Classes\Boundary2D.cs" />
+    <Compile Include="Create\AdjacencyCluster.cs" />
+    <Compile Include="Create\Panels.cs" />
+    <Compile Include="Enums\ApertureType.cs" />
+    <Compile Include="Enums\PanelGroup.cs" />
+    <Compile Include="Enums\PanelType.cs" />
+    <Compile Include="Classes\PlanarBoundary3D.cs" />
+    <Compile Include="Classes\BoundaryEdge3D.cs" />
+    <Compile Include="Classes\Aperture.cs" />
+    <Compile Include="Classes\Panel.cs" />
+    <Compile Include="Classes\Construction.cs" />
+    <Compile Include="Classes\BoundaryEdge2D.cs" />
+    <Compile Include="Manager\ActiveSettings.cs" />
+    <Compile Include="Create\Levels.cs" />
+    <Compile Include="Modify\AddSpace.cs" />
+    <Compile Include="Modify\UpdatePanelType.cs" />
+    <Compile Include="Query\Shell.cs" />
+    <Compile Include="Query\ExternalVector3D.cs" />
+    <Compile Include="Query\Inside.cs" />
+    <Compile Include="Query\Area.cs" />
+    <Compile Include="Query\MinElevationDictionary.cs" />
+    <Compile Include="Query\Text.cs" />
+    <Compile Include="Query\Overlap.cs" />
+    <Compile Include="Query\OverlapPanels.cs" />
+    <Compile Include="Query\TryGetConstruction.cs" />
+    <Compile Include="Query\MergeCoplanarPanels.cs" />
+    <Compile Include="Query\SnapByOffset.cs" />
+    <Compile Include="Query\SnapByPlanes.cs" />
+    <Compile Include="Query\SnapByPoints.cs" />
+    <Compile Include="Query\ApertureConstruction.cs" />
+    <Compile Include="Query\ApertureConstructionName.cs" />
+    <Compile Include="Query\MergeOverlapPanels.cs" />
+    <Compile Include="Query\PanelGroup.cs" />
+    <Compile Include="Query\ConstructionName.cs" />
+    <Compile Include="Query\Construction.cs" />
+    <Compile Include="Query\IsValid.cs" />
+    <Compile Include="Query\Height.cs" />
+    <Compile Include="Query\Width.cs" />
+    <Compile Include="Query\MinElevation.cs" />
+    <Compile Include="Query\MaxElevation.cs" />
+    <Compile Include="Query\ApertureType.cs" />
+    <Compile Include="Query\PanelType.cs" />
+    <Compile Include="Classes\Space.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAM.Architectural\SAM.Architectural.csproj">
+      <Project>{752ad1b6-fd09-4008-b7cc-5fd45fd2f9d9}</Project>
+      <Name>SAM.Architectural</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAM.Core\SAM.Core.csproj">
+      <Project>{1c86b9ac-81b3-41d8-ba48-321f28ab94f4}</Project>
+      <Name>SAM.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAM.Geometry\SAM.Geometry.csproj">
+      <Project>{4cf184fd-b48a-41fc-adbc-20218b44b03d}</Project>
+      <Name>SAM.Geometry</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAM.Math\SAM.Math.csproj">
+      <Project>{255e428d-6969-4542-9846-67b7de87501b}</Project>
+      <Name>SAM.Math</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
